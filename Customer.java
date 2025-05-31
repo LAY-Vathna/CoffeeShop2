@@ -1,6 +1,7 @@
 import java.util.Date;
 
 public class Customer {
+    int customerID;
     String fullName;
     Date birthDate;
     int age;

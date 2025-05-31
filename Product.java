@@ -1,5 +1,8 @@
-public class Product {
+import java.util.ArrayList;
+import java.util.List;
 
+public class Product {
+    int productID;
     String name;
     double price;
     char size; //s, m, l
@@ -7,6 +10,7 @@ public class Product {
     int sugar; //25, 50, 75
     String topping; //chocolate, caramel, vanilla
     int loyalPointsPrice;
+    ArrayList<Product> menu = new ArrayList<Product>();
 
     // Constructor TO ADD product to menu
     public Product(String name, double price, char size, String category) {

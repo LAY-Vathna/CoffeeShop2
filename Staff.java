@@ -1,6 +1,8 @@
 import java.sql.Date;
+import java.util.ArrayList;
 
 public class Staff {
+    int staffID;
     String fullName;
     String position; //barista, cashier, manager
     double salary;
@@ -16,6 +18,9 @@ public class Staff {
     int age;
     String address;
     String password;
+
+    static ArrayList<Staff> staffList = new ArrayList<Staff>();
+
     //constructor to add staff
     public Staff(String fullName, String position, double salary, String phoneNumber, String email, String shift,
             int experince, Date startDate, char gender, char cerficationSkill, String idNumber, Date birthDate, int age,
@@ -40,11 +45,30 @@ public class Staff {
     public Staff(String email, String password) {
         this.email = email;
         this.password = password;
+      
     }
 
-    void addProduct()
+    void addProductToMenu(Product newProduct)
     {
-        System.out.println("Add product to menu");	
+        
     }
-    
+    static void register(Staff newStaff)
+    {
+        staffList.add(newStaff);
+    }
+    static void login(Staff loginStaff)
+    {
+        for(int i=0; i<staffList.size();i++)
+        {
+            System.out.println(staffList.get(i).email);
+            System.out.println(staffList.get(i).password);
+            if(staffList.get(i).email.equals(loginStaff.email) && staffList.get(i).password.equals(loginStaff.password))
+            {
+                System.out.println("login successful");
+                return;
+            }
+        }
+
+        System.out.println("Login failed. Please check your email and password.");
+    }
 }
