@@ -1,5 +1,5 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.Scanner;
 
 public class Product {
     int productID;
@@ -10,7 +10,11 @@ public class Product {
     int sugar; //25, 50, 75
     String topping; //chocolate, caramel, vanilla
     int loyalPointsPrice;
-    ArrayList<Product> menu = new ArrayList<Product>();
+    static ArrayList<Product> menu = new ArrayList<Product>();
+
+    public Product() {
+        // Default constructor
+    }
 
     // Constructor TO ADD product to menu
     public Product(String name, double price, char size, String category) {
@@ -27,6 +31,26 @@ public class Product {
         this.category = category;
         this.sugar = sugar;
         this.topping = topping;
+    }
+
+    public static void addProductToMenu() {
+        
+        Scanner sc = new java.util.Scanner(System.in);
+
+        Product newProduct = new Product();
+        System.out.println("Insert product to menu:");
+        System.out.print("Enter product name: ");
+        newProduct.name = sc.nextLine();
+        System.out.print("Enter product price: ");
+        newProduct.price = sc.nextDouble();
+        System.out.print("Enter product size (s, m, l): ");
+        newProduct.size = sc.next().charAt(0);
+        System.out.print("Enter product category (frappe, coffee, tea): ");
+        newProduct.category = sc.next();
+
+        // Add the new product to the menu
+        menu.add(newProduct);
+
     }
 
 

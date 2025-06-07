@@ -1,5 +1,5 @@
 import java.sql.Date;
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Staff {
     int staffID;
@@ -19,7 +19,7 @@ public class Staff {
     String address;
     String password;
 
-    static ArrayList<Staff> staffList = new ArrayList<Staff>();
+    private static LinkedList<Staff> staffList = new LinkedList<Staff>();
 
     //constructor to add staff
     public Staff(String fullName, String position, double salary, String phoneNumber, String email, String shift,
@@ -70,5 +70,11 @@ public class Staff {
         }
 
         System.out.println("Login failed. Please check your email and password.");
+    }
+
+    public static LinkedList<Staff> getStaffList()
+    {
+        //now u can control how they can access stafflist
+        return staffList;
     }
 }
