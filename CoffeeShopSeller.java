@@ -1,13 +1,16 @@
 import java.util.Scanner;
 
+import objects.*;
+
 public class CoffeeShopSeller {
 
     public static void main(String[] args) {
-        // Staff s1 = new Staff("123@gmail.com", "123");
+        Staff s1 = new Staff("123@gmail.com", "123");
         // Staff s2 = new Staff("234@gmail.com", "234");
         // Staff.register(s1);
         // Staff.register(s2);
-
+        Customer c1 = new Customer("1", 'M', "123");
+        
         Scanner sc = new Scanner(System.in);
         // String email, password;  
         // System.out.print("Enter email: ");
@@ -31,6 +34,7 @@ public class CoffeeShopSeller {
                 case 1:
                     // System.out.println("Insert product to menu:");
                     // Product newProduct = new Product();
+                    // Product.menu.add(newProduct);
                     // System.out.print("Enter product name: ");
                     // newProduct.name = sc.next();
                     // Product p1 = new Product(); //cause problem later

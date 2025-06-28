@@ -1,3 +1,4 @@
+package objects;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -10,28 +11,27 @@ public class Product {
     int sugar; //25, 50, 75
     String topping; //chocolate, caramel, vanilla
     int loyalPointsPrice;
-    static ArrayList<Product> menu = new ArrayList<Product>();
+    public static ArrayList<Product> menu = new ArrayList<Product>();
+    ArrayList<Integer> ordernumberList = new ArrayList<Integer>();
+    
 
-    public Product() {
+    private Product() {
         // Default constructor
     }
 
-    // Constructor TO ADD product to menu
-    public Product(String name, double price, char size, String category) {
-        this.name = name;
-        this.price = price;
-        this.size = size;
-        this.category = category;
-    }
-    // Constructor TO ADD product to order
-    public Product(String name, double price, char size, String category, int sugar, String topping) {
+    public Product(int productID, String name, double price, char size, String category, int sugar, String topping,
+            int loyalPointsPrice) {
+        this.productID = productID;
         this.name = name;
         this.price = price;
         this.size = size;
         this.category = category;
         this.sugar = sugar;
         this.topping = topping;
+        this.loyalPointsPrice = loyalPointsPrice;
     }
+
+
 
     public static void addProductToMenu() {
         
