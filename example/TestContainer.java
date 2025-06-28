@@ -2,14 +2,23 @@ package example;
 
 import java.util.HashSet;
 import java.util.TreeSet;
+
+import objects.Customer;
+import objects.Staff;
+
 import java.util.TreeMap;
 
 public class TestContainer {
     public static void main(String[] args) {
+        Customer newCustomer = new Customer("1", 'M', "123");
+        System.out.println(newCustomer.signUp());
+        Staff newStaff = new Staff("null", "nill");
+        System.out.println(newStaff.signUp());
 
-        TreeMap<Integer, String> map = new TreeMap<Integer, String>();
-        map.put(1, "Hello");
-        map.put(2, "World");
+
+        // TreeMap<Integer, String> map = new TreeMap<Integer, String>();
+        // map.put(1, "Hello");
+        // map.put(2, "World");
         
         // HashSet<String> set = new HashSet<String>();
         

@@ -1,7 +1,9 @@
 package objects;
 import java.util.Date;
 
-public class Customer {
+import authenticationInterface.Authentication;
+
+public class Customer implements Authentication {
     private int customerID;
     public String fullName;
     private Date birthDate;
@@ -34,13 +36,21 @@ public class Customer {
             System.out.println("Wrong password");
         }
     }
+    
+    @Override
+    public boolean login() {
+        // TODO Auto-generated method stub
+        System.out.println("Login as customer");
+        return false;
+    }
+    @Override
+    public boolean signUp() {
+        System.out.println("Sign up as customer");
+        // TODO Auto-generated method stub
+        return false;
+    }
 
-    
 
-
-    
-    
-    
     public Date getBirthDate() {
         return birthDate;
     }
@@ -92,14 +102,5 @@ public class Customer {
         this.gender = gender;
         this.phoneNumber = phoneNumber;
         this.registrationDate = new Date(System.currentTimeMillis());
-    }
-    
-    public static void registerCustomer()
-    {
-
-    }
-    private static void loginCustomer()
-    {
-
     }
 }
