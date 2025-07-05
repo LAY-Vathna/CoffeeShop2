@@ -2,7 +2,7 @@ package objects;
 import java.security.Timestamp;
 
 public class Order {
-    int orderID;
+    private int orderID;
     String customerID;
     String staffID;
     int orderNumber;
