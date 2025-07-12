@@ -1,4 +1,7 @@
-package example;
+package objects;
+
+import example.Dude;
+import example.Wizard;
 
 public class GameStart {
     public static void main(String[] args) {
@@ -14,9 +17,14 @@ public class GameStart {
         // wizard.name = "Wizard";
         // ((Dude) wizard).sayName();
 
-        GrandWizard gWizard = new GrandWizard();
-        gWizard.name = "Grand Wizard";
-        gWizard.sayName();
+        // GrandWizard gWizard = new GrandWizard();
+        // gWizard.name = "Grand Wizard";
+        // gWizard.sayName();
+
+        Dude dude1 = new Dude("Dude1", 100);
+        Wizard wizard = new Wizard("Wizard", 80, 150);
+        System.out.println(wizard.getMp());
+
 
         // dude2.paunchFace(dude1);
         // dude1.paunchFace(wizard);
