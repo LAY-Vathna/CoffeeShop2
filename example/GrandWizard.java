@@ -12,6 +12,16 @@ public class GrandWizard extends Wizard {
     @Override
     public void sayName() {
         // TODO Auto-generated method stub
-        System.out.println("Grand Wizard: " + name);
+        System.out.println("Grand Wizard: " + super.getName());
+    }
+    public void testGW()
+    {
+        System.out.println("from grandwizard");
+    }
+
+    @Override
+    public String toString() {
+        // TODO Auto-generated method stub
+        return super.toString() + ", GrandWizard [spellLevel=" + spellLevel + "]";
     }
 }

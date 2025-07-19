@@ -20,4 +20,14 @@ public class Wizard extends Dude{
         // TODO Auto-generated method stub
         System.out.println("Wizard: " + this.getName());
     }
+    public void testWizard()
+    {
+        System.out.println("from wizard");
+    }
+    @Override
+    public String toString() {
+        // "Dude [name=" + name + ", hp=" + hp + "]";
+        // TODO Auto-generated method stub
+        return super.toString() + ", Wizard [spells=" + spells + " mana=" + this.getMp() + "]";
+    }
 }

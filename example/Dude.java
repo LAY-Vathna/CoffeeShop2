@@ -1,6 +1,9 @@
 package example;
 
+
 public class Dude {
+
+
     private String name;
     private int mp;
     private int hp;
@@ -16,6 +19,7 @@ public class Dude {
         return name;
     }
 
+    //protected so only the subclass can access it
     protected void setName(String name) {
         this.name = name;
     }
@@ -24,6 +28,7 @@ public class Dude {
         return mp;
     }
 
+    //make sure they can only set the correct mp value
     protected void setMp(int mp) {
         if(mp < 0 || mp > 100) {
             System.out.println("MP cannot be negative. Setting to 0. or above 100");
@@ -48,6 +53,10 @@ public class Dude {
     public void paunchFace(Dude target)
     {
         target.hp = target.hp - 10;
+    }
+    @Override
+    public String toString() {
+        return "Dude [name=" + name + ", health point=" + hp + "]";
     }
 }
 
