@@ -11,7 +11,7 @@ public class Dude {
     public Dude(String name, int hp) {
         // Default constructor
         mp = 0; // Default MP
-        this.name = name;
+        setName(name);
         this.hp = hp;
     }
 
@@ -21,7 +21,13 @@ public class Dude {
 
     //protected so only the subclass can access it
     protected void setName(String name) {
-        this.name = name;
+        if(name == null || name.isEmpty()) {
+            System.out.println("Name cannot be null or empty. Setting to 'Unknown'.");
+            System.exit(8);
+        }else
+        {
+            this.name = name;
+        }
     }
 
     public int getMp() {
@@ -56,7 +62,35 @@ public class Dude {
     }
     @Override
     public String toString() {
-        return "Dude [name=" + name + ", health point=" + hp + "]";
+        return "Dude [name=" + name + ", hp =" + hp + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        
+        if (obj == null)
+            return false;
+        // test before passing to the function
+        
+        Dude other = (Dude) obj;
+        if (!(other instanceof Dude)) {
+            return false; // Not the same type
+        }
+        if(this.name.equals(other.name) && this.hp == other.hp)
+        {
+            return true;
+        }
+        else{
+            return false;
+        }
+
+    }
+
+    public static void greeting()
+    {
+        System.out.println("Hello from Dude class!");
+    }
+    
+
 }
 

@@ -30,4 +30,33 @@ public class Wizard extends Dude{
         // TODO Auto-generated method stub
         return super.toString() + ", Wizard [spells=" + spells + " mana=" + this.getMp() + "]";
     }
+
+
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        if(!super.equals(obj))
+        {
+            return false;
+        }else
+        {
+            if (!(obj instanceof Wizard)) {
+                return false; // Not the same type
+            }
+            Wizard other = (Wizard) obj;
+            if(this.getMp() != other.getMp() || this.spells.size() != other.spells.size())
+            {
+                return false; // Different MP values
+            }else
+            {
+                return true;
+            }
+        }
+    }
+
+    public static void greeting() {
+        Dude.greeting();
+        System.out.println("Hello from Wizard class!");
+    }
+
 }

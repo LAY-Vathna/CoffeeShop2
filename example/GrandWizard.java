@@ -24,4 +24,26 @@ public class GrandWizard extends Wizard {
         // TODO Auto-generated method stub
         return super.toString() + ", GrandWizard [spellLevel=" + spellLevel + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        // TODO Auto-generated method stub
+        if(!super.equals(obj))
+        {
+            return false;
+        }else
+        {
+            if (!(obj instanceof GrandWizard)) {
+                return false; // Not the same type
+            }
+            GrandWizard other = (GrandWizard) obj;
+            if(this.spellLevel != other.spellLevel)
+            {
+                return false; // Different spell levels
+            }else
+            {
+                return true;
+            }
+        }
+    }
 }
